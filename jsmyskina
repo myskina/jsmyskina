@@ -1,0 +1,47 @@
+// Create a variable to hold your NFTs 
+const NFTs = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+
+function mintNFT (name, cropType, fieldSize, tool, yield) {
+    const NFT = {
+        "name": name,
+        "cropType": cropType,
+        "fieldSize": fieldSize,
+        "tool": tool,
+        "yield": yield
+    };
+    NFTs.push(NFT);
+    console.log("Minted: " + name);
+}
+
+// Create a "loop" that will go through an "array" of NFTs 
+// and print their metadata with console.log()
+
+function listNFTs () {
+    for (let i = 0; i < NFTs.length; i++) {
+        console.log("\nID: \t\t" + (i + 1));
+        console.log("Name: \t\t" + NFTs[i].name); 
+        console.log("Crop Type: \t" + NFTs[i].cropType);
+        console.log("Field Size: \t" + NFTs[i].fieldSize);
+        console.log("Tool: \t\t" + NFTs[i].tool);
+        console.log("Yield: \t\t" + NFTs[i].yield);
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+
+function getTotalSupply() {
+    console.log("\nTotal NFTs Minted: " + NFTs.length);
+}
+
+// Call your functions below this line
+
+mintNFT("Farmer Bob", "Corn", "50 acres", "Tractor", "2000 bushels");
+mintNFT("Farmer Sue", "Wheat", "75 acres", "Combine Harvester", "3000 bushels");
+mintNFT("Farmer Tim", "Soybeans", "100 acres", "Plow", "4000 bushels");
+mintNFT("Farmer John", "Rice", "60 acres", "Seed Drill", "2500 bushels");
+listNFTs();
+getTotalSupply();
